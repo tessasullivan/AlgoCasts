@@ -8,11 +8,17 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-  first_half = str.substring(0, str.length/2 + 1);
-  second_half_rev = str.split('').reverse().join('').substring(0, str.length/2 + 1);
+  return str.split('').every((char, i) => {
+    return char === str[str.length - i  - 1 ];
+  })
 
-  if (first_half === second_half_rev) return true
-  else return false
+
+  // Solution 1
+  // reversed = str.split('').reverse().join('');
+  // return str === reversed
+
+  // If we want this to be case insensitive:
+  // return str.toLowerCase() === reversed.toLowerCase();
 }
 
 module.exports = palindrome;
