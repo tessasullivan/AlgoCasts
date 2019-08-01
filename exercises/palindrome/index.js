@@ -9,7 +9,7 @@
 
 function palindrome(str) {
   first_half = str.substring(0, str.length/2 + 1);
-  second_half_rev = str.reverse().substring(0, str.length/2 + 1);
+  second_half_rev = str.split('').reverse().join('').substring(0, str.length/2 + 1);
 
   if (first_half === second_half_rev) return true
   else return false
